@@ -4,12 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sage Scan</title>
+    <style>
+        body {
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light grey text */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1, h2, h4 {
+            color: #8a2be2; /* Neon purple */
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="file"] {
+            background-color: #1e1e1e; /* Dark grey background */
+            color: #e0e0e0; /* Light grey text */
+            border: none;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        button[type="submit"] {
+            background-color: #1e90ff; /* Neon blue */
+            color: #fff; /* White text */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #8a2be2; /* Neon purple on hover */
+        }
+        p {
+            color: #999; /* Light grey text */
+            text-align: center;
+        }
+        h4 {
+            text-align: center; /* Center aligning h4 text */
+        }
+    </style>
 </head>
 <body>
     <h1>Sage Scan</h1>
     
     {% if error %}
-        <p style="color: red;">{{ error }}</p>
+        <p>{{ error }}</p>
     {% endif %}
     
     <form action="/" method="post" enctype="multipart/form-data">
@@ -18,11 +58,11 @@
     </form>
 
     {% if filename %}
-        <h2>Uploaded File: {{ filename }}</h2>
+        <h4>{{ filename }} Uploaded Successfully</h4>
     {% endif %}
 
     {% if processed_data %}
-        <h2>Analysis Results:</h2>
+        <h4>Analysis Results:</h4>
         <p>{{ processed_data }}</p>
     {% endif %}
 </body>

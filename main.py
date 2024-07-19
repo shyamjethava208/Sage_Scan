@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 from werkzeug.utils import secure_filename
+import random
 # from scan_sage import Scan_sage  # Import your Scan_sage class from scan_sage.py
 
 app = Flask(__name__)
@@ -51,6 +52,11 @@ def process_image(filepath):
 
     # Example: Get results from Scan_sage class if needed
     # results = scan.get_results()
+    result = random.randint(0,2)
+    if result == 1:
+        return "you have pneumonia"
+    else:
+        return "you are safe"
 
     # Return processed data or results as needed
     return "Processed successfully"
