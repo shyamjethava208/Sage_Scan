@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sage Scan</title>
+</head>
+<body>
+    <h1>Sage Scan</h1>
+    
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".png, .jpg, .jpeg">
+        <button type="submit">Upload X-ray</button>
+    </form>
+
+    {% if filename %}
+        <h2>Uploaded File: {{ filename }}</h2>
+    {% endif %}
+
+    {% if processed_data %}
+        <h2>Analysis Results:</h2>
+        <p>{{ processed_data }}</p>
+    {% endif %}
+</body>
+</html>
