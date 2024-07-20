@@ -7,7 +7,7 @@ import random
 # from scan_sage import Scan_sage  # Import your Scan_sage class from scan_sage.py
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'uploads'
+app.config['UPLOAD_FOLDER'] = 'assests\Predict'
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg'}
 
 # scan = Scan_sage()

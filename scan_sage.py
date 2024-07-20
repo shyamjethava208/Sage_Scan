@@ -4,11 +4,14 @@ import numpy as np
 class Scan_sage:
     def __init__(self):
         self.model = self.load_model()
+        print("model made")
 
     def load_model(self):
         try:
             # Load your trained TensorFlow/Keras model
-            model = tf.keras.models.load_model('path_to_your_model.h5')  # Adjust path accordingly
+            print("inside the load model")
+            model = tf.keras.models.load_model('pneumonia_detection_model.h5')  # Adjust path accordingly
+            print("model is created")
             return model
         except FileNotFoundError:
             raise FileNotFoundError("Model file not found. Please check the path.")
