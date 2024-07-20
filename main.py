@@ -52,11 +52,11 @@ def process_image(filepath):
 
     # Example: Get results from Scan_sage class if needed
     # results = scan.get_results()
-    result = random.randint(0,2)
-    if result == 1:
-        return "you have pneumonia"
-    else:
-        return "you are safe"
+    # result = random.randint(0,2)
+    # if result == 1:
+    #     return "you have pneumonia"
+    # else:
+    #     return "you are safe"
 
     # Return processed data or results as needed
     return "Processed successfully"
